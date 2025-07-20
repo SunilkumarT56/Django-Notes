@@ -1,0 +1,10 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<center>
+<h1>hello {{name}} Event for {{year}}-{{month}} </h1>
+<p>{{cal|safe}}</p>
+<h2>{{now_year}} - {{time}}</h2>
+</center>
+
+{% endblock %}
