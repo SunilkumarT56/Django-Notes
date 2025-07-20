@@ -54,4 +54,5 @@ cd myproject
 # 6. Run the development server
 python manage.py runserver
 
+<img width="265" height="645" alt="Screenshot 2025-07-20 170951" src="https://github.com/user-attachments/assets/dd8410fe-7f53-4c03-9779-ec2b8099b7c4" />
 
