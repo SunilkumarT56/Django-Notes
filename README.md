@@ -1,4 +1,4 @@
-# 🐍 Django Notes - Day 1
+# 🐍 Django Notes 
 
 Welcome to my Django learning journey! This note contains **theoretical concepts**, **installation steps**, and **basic project setup** — perfect for beginners!
 
