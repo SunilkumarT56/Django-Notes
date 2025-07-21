@@ -1,0 +1,40 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<center>
+<h1>Welcome to particular venue...!!</h1>
+<br/><br/>
+<br/>
+<center>
+<div class="row">
+    <div class="col-md-4 mb-3">
+        <div class="card shadow-sm" style="width: 100%;">
+            <div class="card-body">
+                <h5 class="card-title">{{ venues.name }}</h5>
+                <p class="card-text">
+                    📍 <strong>Address:</strong> {{ venues.address }}<br>
+                    📮 <strong>Zip Code:</strong> {{ venues.zip_code }}<br>
+                    📞 <strong>Phone:</strong> {{ venues.phone|default:"N/A" }}<br>
+                    🌐 <strong>Website:</strong>
+                    {% if venues.website %}
+                        <a href="{{ venues.website }}" target="_blank">{{ venues.website }}</a>
+                    {% else %}
+                        N/A
+                    {% endif %}<br>
+                    ✉️ <strong>Email:</strong>
+                    {% if venues.email_address %}
+                        <a href="mailto:{{ venue.email_address }}">{{ venues.email_address }}</a>
+                    {% else %}
+                        N/A
+                    {% endif %}
+                </p>
+                <a href="{% url 'update-venue' venues.id %}" class="btn btn-outline-secondary">Update</a>
+                <a href="{% url 'delete-venue' venues.id %}" class="btn btn-outline-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+</center>
+</center>
+
+{% endblock %}

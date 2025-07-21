@@ -8,25 +8,8 @@
     <div class="col-md-4 mb-3">
         <div class="card shadow-sm" style="width: 100%;">
             <div class="card-body">
-                <h5 class="card-title">{{ venue.name }}</h5>
-                <p class="card-text">
-                    📍 <strong>Address:</strong> {{ venue.address }}<br>
-                    📮 <strong>Zip Code:</strong> {{ venue.zip_code }}<br>
-                    📞 <strong>Phone:</strong> {{ venue.phone|default:"N/A" }}<br>
-                    🌐 <strong>Website:</strong>
-                    {% if venue.website %}
-                        <a href="{{ venue.website }}" target="_blank">{{ venue.website }}</a>
-                    {% else %}
-                        N/A
-                    {% endif %}<br>
-                    ✉️ <strong>Email:</strong>
-                    {% if venue.email_address %}
-                        <a href="mailto:{{ venue.email_address }}">{{ venue.email_address }}</a>
-                    {% else %}
-                        N/A
-                    {% endif %}
-                </p>
-                <a href="#" class="btn btn-outline-primary">View Events</a>
+                <p class="card-title">{{ venue.name }}</p>
+                <a href="{% url 'particular-venue' venue.id %}" class="btn btn-outline-secondary btn-sm">More details</a>
             </div>
         </div>
     </div>

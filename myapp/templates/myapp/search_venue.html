@@ -1,0 +1,41 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<center>
+    <br/><br/>
+    {% if searched and result %}
+      {% for venue in venues %}
+         <br/>
+          <div class="col-md-4 mb-3">
+            <div class="card shadow-sm" style="width: 100%;">
+            <div class="card-body">
+                <h5 class="card-title">{{ venue.name }}</h5>
+                <p class="card-text">
+                    📍 <strong>Address:</strong> {{ venue.address }}<br>
+                    📮 <strong>Zip Code:</strong> {{ venue.zip_code }}<br>
+                    📞 <strong>Phone:</strong> {{ venue.phone|default:"N/A" }}<br>
+                    🌐 <strong>Website:</strong>
+                    {% if venue.website %}
+                        <a href="{{ venue.website }}" target="_blank">{{ venue.website }}</a>
+                    {% else %}
+                        N/A
+                    {% endif %}<br>
+                    ✉️ <strong>Email:</strong>
+                    {% if venue.email_address %}
+                        <a href="mailto:{{ venue.email_address }}">{{ venue.email_address }}</a>
+                    {% else %}
+                        N/A
+                    {% endif %}
+                </p>
+                <a href="#" class="btn btn-outline-primary">View Events</a>
+            </div>
+        </div>
+    </div>
+      {% endfor %}
+    {% else %}
+        <h1>Not Found </h1>
+    {% endif %}
+    
+</center>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<center>
+    <br/><br/>
+<center> <h1>Update this venue</h1> </center>
+<br/>
+<form method=POST action="">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-outline-secondary btn-sm" type="submit" value="Submit">Submit</button>
+</form>
+
+</center>
+
+{% endblock %}
