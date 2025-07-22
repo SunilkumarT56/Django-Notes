@@ -98,7 +98,7 @@ def add_venue(request):
     
 
 def venues_list(request):
-    venues = Venue.objects.all()
+    venues = Venue.objects.all().order_by("name")
     return render(request , 'myapp/venue_list.html' , {'venues': venues})
 
 

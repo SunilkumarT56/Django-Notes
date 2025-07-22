@@ -17,21 +17,61 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'now' current_year current_month %}">Now</a>
         </li>
+       <li> w
+        <div class="dropdown">
+        <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          Lists
+      </button>
+       <ul class="dropdown-menu bg-white" aria-labelledby="dropdownMenuButton1">
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'event-list' %}">Events</a>
+          <a class="nav-link text-dark" href="{% url 'event-list' %}">Events</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'venues-list' %}">Venues</a>
+          <a class="nav-link text-dark" href="{% url 'venues-list' %}">Venues</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'add-venue' %}">Add Venues</a>
+  </ul>
+</div>
+</li>
+<li> 
+        <div class="dropdown">
+        <button class="btn btn-dark text-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          Add
+      </button>
+       <ul class="dropdown-menu bg-white" aria-labelledby="dropdownMenuButton1">
+         <li class="nav-item">
+          <a class="nav-link text-dark" href="{% url 'add-venue' %}">Add Venues</a>
         </li>
          <li class="nav-item">
-          <a class="nav-link" href="{% url 'venue-text' %}">Download venue list</a>
+          <a class="nav-link text-dark" href="{% url 'add-event' %}">Add Events</a>
         </li>
-         <li class="nav-item">
-          <a class="nav-link" href="{% url 'add-event' %}">Add Events</a>
+  </ul>
+</div>
+</li>
+<li> 
+        <div class="dropdown">
+        <button class="btn btn-dark text-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          Download
+      </button>
+       <ul class="dropdown-menu bg-white" aria-labelledby="dropdownMenuButton1">
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="{% url 'venue-text' %}">venue pdf</a>
         </li>
+  </ul>
+</div>
+</li>
+        {% if user.is_authenticated %}
+          <li class="nav-item">
+           <a class="nav-link" href="{% url 'logout-user' %}">Logout</a>
+          </li>
+        {% else %}
+          <li class="nav-item">
+           <a class="nav-link" href="{% url 'register-user' %}">Register</a>
+           </li>
+          <li class="nav-item">
+           <a class="nav-link" href="{% url 'login-user' %}">Login</a>
+          </li>
+        {% endif %}
+
       </ul>
     </div>
 
